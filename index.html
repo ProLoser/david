@@ -18,7 +18,7 @@
         <div class="pointer" ng-class="{active:active}" ng-style="{left:normalizedPosition[0]*100+'%'}"></div>
     </div>
     <div class="keyboard">
-        <div ng-repeat="letterGroup in letters" ng-class="{hover:isHovered($index)}">
+        <div ng-repeat="letterGroup in letters" ng-class="{hover:$index==getColumn()}">
             <span ng-repeat="letter in letterGroup">{{letter}}</span>
         </div>
     </div>

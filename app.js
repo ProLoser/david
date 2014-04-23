@@ -54,7 +54,7 @@ module.controller('app', function($scope){
     $scope.$watch('normalizedPosition[1]', _.throttle(function(newVal){
         var column;
         if (newVal < $scope.triggerHeight && $scope.normalizedPosition[0]) {
-            column = Math.round($scope.normalizedPosition[0] * 10)
+            column = $scope.getColumn();
             $scope.addLetter($scope.letters[column][0]);
             $scope.active = true;
         } else {
@@ -62,8 +62,8 @@ module.controller('app', function($scope){
         }
     }, 1000));
     // Z Axis
-    $scope.isHovered = function(index) {
-        return index == Math.round($scope.normalizedPosition[0] * 10);
+    $scope.getColumn = function() {
+        return Math.floor($scope.normalizedPosition[0] * 10);
     };
     $scope.$watch('normalizedPosition[2]', _.throttle(function(newVal){
         
