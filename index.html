@@ -1,0 +1,38 @@
+<html ng-app="app">
+<head>
+    <title>Leap Control!</title>
+    
+    <script src="bower_components/leapjs/leap-0.5.0.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body ng-controller="app">
+    <h1>Leap motion Test</h1>
+    <p>
+        {{sentence}}
+        <span ng-show="word">[{{word}}]</span>
+    </p>
+    <div class="window">
+        <div class="pointer" ng-class="{active:active}" ng-style="{left:normalizedPosition[0]*100+'%'}"></div>
+    </div>
+    <div class="keyboard">
+        <div ng-repeat="letterGroup in letters" ng-class="{hover:isHovered($index)}">
+            <span ng-repeat="letter in letterGroup">{{letter}}</span>
+        </div>
+    </div>
+    <div>
+    Height Trigger: {{triggerHeight*100}}% <input type="range" ng-model="triggerHeight" max="1" min="0" step="0.1">
+    </div>
+    <div style="display:none">
+    
+    <canvas id="displayArea" width="200" height="100" style="background:#dddddd;"></canvas>
+    <h1>Interaction Box</h1>
+    <pre ng-bind="normalizedPosition|json"></pre>
+    X: <progress value="{{normalizedPosition[0]}}"></progress><br>
+    Y: <progress value="{{normalizedPosition[1]}}"></progress><br>
+    Z: <progress value="{{normalizedPosition[2]}}"></progress>
+    </div>
+</body>
+</html>

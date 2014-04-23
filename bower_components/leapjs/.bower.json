@@ -1,0 +1,28 @@
+{
+  "name": "leapjs",
+  "version": "0.5.0",
+  "homepage": "https://github.com/leapmotion/leapjs",
+  "description": "JavaScript client for the Leap Motion Controller",
+  "main": "leap-0.5.0.js",
+  "keywords": [
+    "leap",
+    "leapmotion"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "0.5.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.5.0",
+    "commit": "931a90915bf426fb3c799af07f4c4ab9e3c5cffc"
+  },
+  "_source": "git://github.com/leapmotion/leapjs.git",
+  "_target": "~0.5.0",
+  "_originalSource": "leapjs",
+  "_direct": true
+}

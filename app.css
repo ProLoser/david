@@ -1,0 +1,39 @@
+.keyboard {
+    margin: 10px 0;
+    overflow: hidden;
+}
+.keyboard div {
+    float: left;
+    width: 10%;
+    text-transform: uppercase;
+}
+.keyboard span {
+    display: block;
+}
+.keyboard span + span {
+    margin-left: 10px;
+}
+.keyboard span + span + span {
+    margin-left: 20px;
+}
+.hover {
+    color:blue;
+}
+.window {
+    width: 100%;
+    background: lightgray;
+    height: 20px;
+    position: relative;
+}
+.pointer {
+    position: absolute;
+    top: 0;
+    height: 20px;
+    width: 10px;
+    background: red;
+    margin: 0 -5px;
+    left: 50%;
+}
+.pointer.active {
+    background: blue;
+}
