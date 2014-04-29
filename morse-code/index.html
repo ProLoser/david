@@ -1,0 +1,35 @@
+<html ng-app="app">
+<head>
+    <title>Leap Control!</title>
+    
+    <script src="/bower_components/leapjs/leap-0.5.0.js"></script>
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-touch/angular-touch.min.js"></script>
+    <script src="/bower_components/underscore/underscore.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body ng-controller="app">
+
+    <div class="target" ng-mousedown="tap()" ng-mouseup="untap()">
+        Tap Me
+        <h3 ng-show="time">Last time: {{time}}</h3>
+    </div>
+
+    <button ng-click="dot()">DOT</button>
+    <button ng-click="dash()">DASH</button>
+    <button ng-click="pause()">PAUSE</button>
+    <button ng-click="space()">SPACE</button>
+    <button ng-click="clear()">CLEAR</button>
+
+    <p><strong>Letter:</strong> {{letter}}</p>
+    <p><strong>Word:</strong> {{word}}</p>
+    <p>{{sentence}}</p>
+
+    <h3>Timing sizes</h3>
+    <div ng-repeat="(name, timer) in timers">
+        <label>{{name}}: {{timer / 1000}}s</label><br>
+        <input ng-model="timers[name]" type="range" min="100" max="3000" step="100">
+    </div>
+</body>
+</html>
