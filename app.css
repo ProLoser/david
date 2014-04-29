@@ -25,6 +25,26 @@
     height: 20px;
     position: relative;
 }
+.vert {
+    width: 20px;
+    height: 100px;
+    float: left;
+    margin-right: 10px;
+}
+.vert .pointer {
+    width: 20px;
+    height: 10px;
+    margin: -5px 0;
+    left: 0;
+    top: 50%;
+}
+.trigger {
+    background: lightblue;
+    width: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
 .pointer {
     position: absolute;
     top: 0;
