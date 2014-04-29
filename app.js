@@ -57,7 +57,7 @@ module.controller('app', function($scope){
     $scope.sentence = 'This is a practice';
 
     // Y Axis
-    $scope.triggerHeight = .1;
+    $scope.triggerHeight = .2;
     // up
     $scope.$watch('normalizedPosition[1] < triggerHeight', _.throttle(function(newVal){
         if (!newVal) return;
