@@ -73,6 +73,7 @@ module.controller('app', function($scope){
 
     // Z Axis
     $scope.getColumn = function() {
+        if (!$scope.normalizedPosition) return;
         return Math.floor($scope.normalizedPosition[0] * 10);
     };
     // $scope.$watch('normalizedPosition[2]', _.throttle(function(newVal){
