@@ -20,7 +20,7 @@
 
     <div class="window vert">
         <div class="trigger" ng-style="{height:triggerHeight*100+'%'}"></div>
-        <div class="pointer" ng-class="{active:active}" ng-style="{left:normalizedPosition[1]*100+'%'}"></div>
+        <div class="pointer" ng-class="{active:active}" ng-style="{bottom:normalizedPosition[1]*100+'%'}"></div>
     </div>
     <div class="keyboard">
         <div ng-repeat="letterGroup in letters" ng-class="{hover:$index==getColumn()}">
