@@ -1,4 +1,4 @@
-module = angular.module('app', []);
+module = angular.module('app', ['ui.event']);
 
 // 1 = dot, 0 = dash
 module.constant('codes', {
