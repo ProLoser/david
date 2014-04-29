@@ -16,7 +16,7 @@
     <div class="target" ng-mousedown="tap()" ng-mouseup="untap()">
         Desktop mouse click
     </div>
-    <div class="target" ui-event="{touchstart:'tap()',touchend:'untap()'}">
+    <div class="target" ui-event="{touchstart:'tap()',touchend:'untap()'}" ng-class="{dot:dotActive,dash:dashActive}">
         Mobile touch enabled
         <h3>hold time: {{time}} pause time: {{lastGap}}</h3>
     </div>

@@ -7,3 +7,9 @@ input {
 	margin: 20px;
 	text-align: center;
 }
+.dot {
+	background: lightblue;
+}
+.dash {
+	background: lightgreen;
+}

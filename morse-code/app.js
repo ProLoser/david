@@ -59,16 +59,24 @@ module.controller('app', function($scope, codes, $timeout){
     $scope.tap = function(){
         $scope.start = timestamp();
         $scope.lastGap = $scope.start - $scope.end;
+        $scope.dotActive = true;
 
+        dashTimer = $timeout(function(){
+            $scope.dashActive = true;
+        }, $scope.timers.dash);
         $timeout.cancel(letterTimer);
         $timeout.cancel(wordTimer);
     };
 
     var letterTimer;
     var wordTimer;
+    var dashTimer;
 
     $scope.untap = function(){
         $scope.end = timestamp();
+        $scope.dotActive = $scope.dashActive = false;
+        $timeout.cancel(dashTimer);
+
         $scope.time = $scope.end - $scope.start;
         if ($scope.time < $scope.timers.dash)
             $scope.dot();
