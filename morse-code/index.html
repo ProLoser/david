@@ -4,7 +4,7 @@
     
     <script src="../bower_components/leapjs/leap-0.5.0.js"></script>
     <script src="../bower_components/angular/angular.min.js"></script>
-    <script src="../bower_components/angular-touch/angular-touch.min.js"></script>
+    <script src="../bower_components/angular-ui-utils/ui-utils.min.js"></script>
     <script src="../bower_components/underscore/underscore.js"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" href="app.css">
@@ -12,7 +12,11 @@
 <body ng-controller="app">
 
     <div class="target" ng-mousedown="tap()" ng-mouseup="untap()">
-        Tap Me
+        Desktop mouse click
+        <h3 ng-show="time">Last time: {{time}}</h3>
+    </div>
+    <div class="target" ui-event="{touchstart:'tap()',touchend:'untap()'}">
+        Mobile touch enabled
         <h3 ng-show="time">Last time: {{time}}</h3>
     </div>
 
