@@ -43,7 +43,7 @@ module.controller('app', function($scope){
 
         $scope.addWord($scope.word);
         $scope.word = '';
-    }, 500);
+    }, 500));
 
     // left edge
     $scope.$watch('normalizedPosition[0] === 0', _.throttle(function(newVal){
@@ -64,7 +64,7 @@ module.controller('app', function($scope){
 
         column = $scope.getColumn();
         $scope.addLetter($scope.letters[column][0]);
-    }, 1000);
+    }, 1000));
 
     // down
     // $scope.$watch('normalizedPosition[1] > triggerHeight', _.throttle(function(newVal){
@@ -78,7 +78,7 @@ module.controller('app', function($scope){
     // $scope.$watch('normalizedPosition[2]', _.throttle(function(newVal){
         
     // }, 500));
-    
+
     $scope.removeWord = function(word) {
         sentence = $scope.sentence.split(' ');
         $scope.say('Removed ' + sentence.pop());
