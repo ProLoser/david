@@ -53,13 +53,12 @@ module.controller('app', function($scope, codes, $timeout){
     $scope.word = '';
     $scope.sentence = '';
 
-    var start;
-    var end;
     timestamp = function(){
         return (new Date()).getTime();
     }
     $scope.tap = function(){
-        start = timestamp();
+        $scope.start = timestamp();
+        $scope.lastGap = $scope.start - $scope.end;
 
         $timeout.cancel(letterTimer);
         $timeout.cancel(wordTimer);
@@ -69,8 +68,8 @@ module.controller('app', function($scope, codes, $timeout){
     var wordTimer;
 
     $scope.untap = function(){
-        end = timestamp();
-        $scope.time = end - start;
+        $scope.end = timestamp();
+        $scope.time = $scope.end - $scope.start;
         if ($scope.time < $scope.timers.dash)
             $scope.dot();
         else
