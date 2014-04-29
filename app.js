@@ -37,37 +37,48 @@ module.controller('app', function($scope){
         ['P']
     ];
     // X Axis
-    $scope.$watch('normalizedPosition[0]', _.throttle(function(newVal){
-        if (newVal === 1) {
-            $scope.addWord($scope.word);
-            $scope.word = '';
-        }
-        if (newVal === 0) {
-            if ($scope.word) $scope.word = ''
-            else $scope.removeWord();
-        }
+    // right edge
+    $scope.$watch('normalizedPosition[0] === 1', _.throttle(function(newVal){
+        if (!newVal) return;
+
+        $scope.addWord($scope.word);
+        $scope.word = '';
+    }, 500);
+
+    // left edge
+    $scope.$watch('normalizedPosition[0] === 0', _.throttle(function(newVal){
+        if (!newVal) return;
+
+        if ($scope.word) $scope.word = ''
+        else $scope.removeWord();
     }, 500));
+
     $scope.word = 'test';
     $scope.sentence = 'This is a practice';
+
     // Y Axis
     $scope.triggerHeight = .1;
-    $scope.$watch('normalizedPosition[1]', _.throttle(function(newVal){
-        var column;
-        if (newVal < $scope.triggerHeight && $scope.normalizedPosition[0]) {
-            column = $scope.getColumn();
-            $scope.addLetter($scope.letters[column][0]);
-            $scope.active = true;
-        } else {
-            $scope.active = false;
-        }
-    }, 1000));
+    // up
+    $scope.$watch('normalizedPosition[1] < triggerHeight', _.throttle(function(newVal){
+        if (!newVal) return;
+
+        column = $scope.getColumn();
+        $scope.addLetter($scope.letters[column][0]);
+    }, 1000);
+
+    // down
+    // $scope.$watch('normalizedPosition[1] > triggerHeight', _.throttle(function(newVal){
+    //     if (!newVal) return;
+    // }, 1000));
+
     // Z Axis
     $scope.getColumn = function() {
         return Math.floor($scope.normalizedPosition[0] * 10);
     };
-    $scope.$watch('normalizedPosition[2]', _.throttle(function(newVal){
+    // $scope.$watch('normalizedPosition[2]', _.throttle(function(newVal){
         
-    }, 500));
+    // }, 500));
+    
     $scope.removeWord = function(word) {
         sentence = $scope.sentence.split(' ');
         $scope.say('Removed ' + sentence.pop());
