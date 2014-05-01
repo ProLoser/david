@@ -45,9 +45,9 @@ module.controller('app', function($scope, codes, $timeout){
     // Milliseconds
     $scope.timers = {
         dot: 100, // base unit of time
-        dash: 300, // length of dash (3x dot)
-        letter: 300, // space between letters (3x dot)
-        word: 700 // space between words (7x dot)
+        dash: 500, // length of dash (3x dot)
+        letter: 500, // space between letters (3x dot)
+        word: 1000 // space between words (7x dot)
     };
     $scope.letter = '';
     $scope.word = '';
