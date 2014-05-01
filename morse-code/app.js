@@ -42,6 +42,8 @@ module.constant('codes', {
 
 module.controller('app', function($scope, codes, $timeout){
 
+    $scope.codes = codes;
+
     // Milliseconds
     $scope.timers = {
         dot: 100, // base unit of time

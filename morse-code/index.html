@@ -27,7 +27,7 @@
     <button ng-click="space()">SPACE</button>
     <button ng-click="clear()">CLEAR</button>
 
-    <p><strong>Letter:</strong> {{letter}}</p>
+    <p><strong>Letter:</strong> {{letter}} <span ng-show="codes[letter]">({{codes[letter]}})</span></p>
     <p><strong>Word:</strong> {{word}}</p>
     <p>{{sentence}}</p>
 
