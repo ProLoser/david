@@ -135,6 +135,6 @@ module.controller('app', function($scope, codes, $timeout){
     };
 
     $scope.lock = function(){
-        $scope.$root.locaked = !$scope.locked;
+        $scope.$root.locked = !$scope.locked;
     };
 });
