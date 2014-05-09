@@ -91,7 +91,7 @@ module.controller('app', function($scope, codes, $timeout){
         }, $scope.timers.letter);
         wordTimer = $timeout(function(){
             $scope.space();
-        }, $scope.timers.word);
+        }, $scope.timers.word + $scope.timers.letter);
     };
 
     $scope.clear = function(){
