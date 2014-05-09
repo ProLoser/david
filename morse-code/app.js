@@ -127,7 +127,7 @@ module.controller('app', function($scope, codes, $timeout){
             $scope.word = '';
         } else {
             $scope.sentence += '.  ';
-            $scope.say($scope.sentence);
+            //$scope.say($scope.sentence);
         }
     };
 
