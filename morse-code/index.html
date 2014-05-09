@@ -26,7 +26,7 @@
     <button ng-click="pause()">PAUSE</button>
     <button ng-click="space()">SPACE</button>
     <button ng-click="clear()">CLEAR</button>
-    <button ng-click="lock()">LOCK</button>
+    <button ng-click="lock()">{{locked&&'LOCK'||'UNLOCK'}}</button>
 
     <p><strong>Letter:</strong> {{letter}} <span ng-show="codes[letter]">({{codes[letter]}})</span></p>
     <p><strong>Word:</strong> {{word}}</p>
