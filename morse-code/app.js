@@ -133,4 +133,8 @@ module.controller('app', function($scope, codes, $timeout){
     $scope.say = function(text){
         speechSynthesis.speak(new SpeechSynthesisUtterance(text));
     };
+
+    $scope.lock = function(){
+        $scope.locaked = !$scope.locked;
+    };
 });
