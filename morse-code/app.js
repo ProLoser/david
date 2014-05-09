@@ -65,7 +65,7 @@ module.controller('app', function($scope, codes, $timeout){
 
         dashTimer = $timeout(function(){
             $scope.dashActive = true;
-        }, $scope.timers.dash);
+        }, +$scope.timers.dash);
         $timeout.cancel(letterTimer);
         $timeout.cancel(wordTimer);
     };
@@ -88,10 +88,10 @@ module.controller('app', function($scope, codes, $timeout){
 
         letterTimer = $timeout(function(){
             $scope.pause();
-        }, $scope.timers.letter);
+        }, +$scope.timers.letter);
         wordTimer = $timeout(function(){
             $scope.space();
-        }, $scope.timers.word + $scope.timers.letter);
+        }, +$scope.timers.word + +$scope.timers.letter);
     };
 
     $scope.clear = function(){
