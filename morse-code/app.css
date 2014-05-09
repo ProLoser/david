@@ -1,6 +1,12 @@
 input {
 	width: 50%;
 }
+.target-clear {
+	height: 100px;
+	background: pink;
+	margin: 20px;
+	text-align: center;
+}
 .target {
 	height: 300px;
 	background: rgba(255, 0, 0, .5);

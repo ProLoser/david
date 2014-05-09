@@ -16,6 +16,11 @@
     <div class="target" ng-mousedown="tap()" ng-mouseup="untap()">
         Desktop mouse click
     </div>
+
+    <div class="target-clear" ui-event="{touchstart:'clear();$event.preventDefault()'}" oncontextmenu="return false">
+        Clear / Cancel
+    </div>
+
     <div class="target" ui-event="{touchstart:'tap();$event.preventDefault()',touchend:'untap()'}" ng-class="{dot:dotActive,dash:dashActive}" oncontextmenu="return false">
         Mobile touch enabled
         <h3>hold time: {{time}} pause time: {{lastGap}}</h3>
