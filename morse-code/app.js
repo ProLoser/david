@@ -101,6 +101,7 @@ module.controller('app', function($scope, codes, $timeout){
             $scope.word = '';
         else
             $scope.sentence = '';
+        $scope.say('clear');
     };
 
     $scope.dot = function(){
