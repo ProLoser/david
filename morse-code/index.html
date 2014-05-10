@@ -12,20 +12,25 @@
     <script src="app.js"></script>
     <link rel="stylesheet" href="app.css">
 </head>
-<body ng-controller="app" ng-style="{overflow:locked&&'hidden'}">
+<body ng-controller="app">
 
-    <div class="target" ng-mousedown="tap()" ng-mouseup="untap()">
-        Desktop mouse click
-    </div>
 
     <div class="target-clear" ui-event="{touchstart:'clear();$event.preventDefault()'}" oncontextmenu="return false" ng-class="rotated&&'rotated'">
         Clear / Cancel
     </div>
 
     <div class="target" ui-event="{touchstart:'tap();$event.preventDefault()',touchend:'untap()'}" ng-class="{dot:dotActive,dash:dashActive,rotated:rotated}" oncontextmenu="return false">
-        Mobile touch enabled
-        <h3>hold time: {{time}} pause time: {{lastGap}}</h3>
         <img src="morse_code.png" alt="Morse Code Chart">
+        <p><strong>Letter:</strong> {{letter}} <span ng-show="codes[letter]">({{codes[letter]}})</span></p>
+        <p><strong>Word:</strong> {{word}}</p>
+        <p><strong>Sentence:</strong> {{sentence}}</p>
+    </div>
+
+
+    <h3>Timing sizes</h3>
+    <div ng-repeat="(name, timer) in timers">
+        <label>{{name}}<span ng-show="timerNames[name]"> ({{timerNames[name]}})</span>: {{timer / 1000}}s</label><br>
+        <input ng-model="timers[name]" type="range" min="100" max="5000" step="100">
     </div>
 
     <button ng-click="dot()">DOT</button>
@@ -33,18 +38,11 @@
     <button ng-click="pause()">PAUSE</button>
     <button ng-click="space()">SPACE</button>
     <button ng-click="clear()">CLEAR</button>
-    <button ng-click="lock()">{{locked&&'UNLOCK'||'LOCK'}}</button>
     <button ng-click="rotated=!rotated">{{rotated&&'LANDSCAPE LAYOUT'||'PORTRAIT LAYOUT'}}</button>
 
-    <p><strong>Letter:</strong> {{letter}} <span ng-show="codes[letter]">({{codes[letter]}})</span></p>
-    <p><strong>Word:</strong> {{word}}</p>
-    <p>{{sentence}}</p>
-
-    <h3>Timing sizes</h3>
-    <div ng-repeat="(name, timer) in timers">
-        <label>{{name}}: {{timer / 1000}}s</label><br>
-        <input ng-model="timers[name]" type="range" min="100" max="5000" step="100">
+    <div class="target-clear" ng-mousedown="tap()" ng-mouseup="untap()">
+        Desktop mouse click
+        <h3>hold time: {{time}} pause time: {{lastGap}}</h3>
     </div>
-    <img src="morse_code.png" alt="Morse Code Chart">
 </body>
 </html>

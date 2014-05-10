@@ -2,9 +2,9 @@ input {
 	width: 100%;
 }
 .target-clear {
-	height: 100px;
+	height: 25%;
 	background: pink;
-	margin: 20px;
+	margin: 20px 20px 0;
 	text-align: center;
 }
 .target-clear.rotated {
@@ -14,7 +14,7 @@ input {
 	margin: 0 20px 0 0;
 }
 .target {
-	height: 100%;
+	height: 75%;
 	background: rgba(255, 0, 0, .5);
 	margin: 20px;
 	text-align: center;
@@ -24,10 +24,15 @@ img {
 }
 .target.rotated {
 	width: 70%;
+	height: 100%;
 }
 .dot {
 	background: lightblue;
 }
 .dash {
 	background: lightgreen;
+}
+button {
+	padding: 15px;
+	font-size: 150%;
 }

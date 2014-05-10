@@ -44,6 +44,12 @@ module.controller('app', function($scope, codes, $timeout, $localStorage){
 
     $scope.codes = codes;
 
+    $scope.timerNames = {
+        dash: 'how long to hold down dash',
+        letter: 'time allowed dots/dashes',
+        word: 'time allowed between letters'
+    };
+
     // Milliseconds
     if (!$localStorage.timers) $localStorage.timers = {
         // dot: 100, // base unit of time
@@ -134,9 +140,5 @@ module.controller('app', function($scope, codes, $timeout, $localStorage){
 
     $scope.say = function(text){
         speechSynthesis.speak(new SpeechSynthesisUtterance(text));
-    };
-
-    $scope.lock = function(){
-        $scope.$root.locked = !$scope.locked;
     };
 });
