@@ -1,4 +1,4 @@
-module = angular.module('app', ['ui.event']);
+module = angular.module('app', ['ui.event', 'ngStorage']);
 
 // 1 = dot, 0 = dash
 module.constant('codes', {
@@ -40,13 +40,13 @@ module.constant('codes', {
     '00001': '9',
 });
 
-module.controller('app', function($scope, codes, $timeout){
+module.controller('app', function($scope, codes, $timeout, $localStorage){
 
     $scope.codes = codes;
 
     // Milliseconds
-    $scope.timers = {
-        dot: 100, // base unit of time
+    $scope.timers = $localStorage.timers = {
+        // dot: 100, // base unit of time
         dash: 500, // length of dash (3x dot)
         letter: 500, // space between letters (3x dot)
         word: 1000 // space between words (7x dot)
