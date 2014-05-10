@@ -18,13 +18,14 @@
         Desktop mouse click
     </div>
 
-    <div class="target-clear" ui-event="{touchstart:'clear();$event.preventDefault()'}" oncontextmenu="return false">
+    <div class="target-clear" ui-event="{touchstart:'clear();$event.preventDefault()'}" oncontextmenu="return false" ng-class="rotated&&'rotated'">
         Clear / Cancel
     </div>
 
-    <div class="target" ui-event="{touchstart:'tap();$event.preventDefault()',touchend:'untap()'}" ng-class="{dot:dotActive,dash:dashActive}" oncontextmenu="return false">
+    <div class="target" ui-event="{touchstart:'tap();$event.preventDefault()',touchend:'untap()'}" ng-class="{dot:dotActive,dash:dashActive,rotated:rotated}" oncontextmenu="return false">
         Mobile touch enabled
         <h3>hold time: {{time}} pause time: {{lastGap}}</h3>
+        <img src="morse_code.png" alt="Morse Code Chart">
     </div>
 
     <button ng-click="dot()">DOT</button>
@@ -33,6 +34,7 @@
     <button ng-click="space()">SPACE</button>
     <button ng-click="clear()">CLEAR</button>
     <button ng-click="lock()">{{locked&&'UNLOCK'||'LOCK'}}</button>
+    <button ng-click="rotated=!rotated">{{rotated&&'LANDSCAPE LAYOUT'||'PORTRAIT LAYOUT'}}</button>
 
     <p><strong>Letter:</strong> {{letter}} <span ng-show="codes[letter]">({{codes[letter]}})</span></p>
     <p><strong>Word:</strong> {{word}}</p>

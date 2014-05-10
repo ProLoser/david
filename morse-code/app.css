@@ -7,11 +7,24 @@ input {
 	margin: 20px;
 	text-align: center;
 }
+.target-clear.rotated {
+	float: right;
+	height: 100%;
+	width: 25%;
+	margin: 0 20px 0 0;
+}
 .target {
 	height: 100%;
 	background: rgba(255, 0, 0, .5);
-	margin: 20px 0;
+	margin: 20px;
 	text-align: center;
+}
+.target img {
+	max-height: 100%;
+	max-width: 100%;
+}
+.target.rotated {
+	width: 70%;
 }
 .dot {
 	background: lightblue;
