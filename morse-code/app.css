@@ -19,8 +19,7 @@ input {
 	margin: 20px;
 	text-align: center;
 }
-.target img {
-	max-height: 100%;
+img {
 	max-width: 100%;
 }
 .target.rotated {
